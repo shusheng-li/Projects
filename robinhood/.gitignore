@@ -10,7 +10,9 @@
 /coverage
 
 # production
-/build
+/web/build
+/venv
+/__pycache__
 
 # misc
 .DS_Store

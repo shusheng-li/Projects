@@ -15,7 +15,7 @@ export function Portfolio() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://127.0.0.1:5000/portfolio');
+                const response = await fetch('http://35.212.230.76/api/portfolio');
                 if (!response.ok) {
                     throw new Error('Failed to fetch data');
                 }

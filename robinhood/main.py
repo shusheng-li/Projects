@@ -20,7 +20,7 @@ try:
 except Exception as e:
     print(e)
 
-@app.route("/query/<string:ticker>", methods=['GET'])
+@app.route("/api/query/<string:ticker>", methods=['GET'])
 def query(ticker: str):
     # abort_no_exist(ticker)
     info = yf.Ticker(ticker).info
@@ -29,7 +29,7 @@ def query(ticker: str):
     else:
         return "", 404
 
-@app.route("/buy/<string:ticker>/<int:quantity>", methods=["POST"])
+@app.route("/api/buy/<string:ticker>/<int:quantity>", methods=["POST"])
 def buy(ticker: str, quantity: int):
     ticker = ticker.upper()
     my_stock = portfolio_db.find_one({"_id": ticker})
@@ -46,7 +46,7 @@ def buy(ticker: str, quantity: int):
         portfolio_db.insert_one(entry)
     return portfolio_db.find_one({"_id": ticker}), 201
 
-@app.route("/portfolio", methods=["GET"])
+@app.route("/api/portfolio", methods=["GET"])
 def portfolio():
     return jsonify(list(portfolio_db.find()))
     
@@ -54,4 +54,4 @@ def portfolio():
 #abort(404, id doesn't exist)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)

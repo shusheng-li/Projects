@@ -8,12 +8,12 @@
   </a>
 </div>
 <div align="center">
-  <a href="https://shushengli.webflow.io/">
-    <img src="https://github.com/devicons/devicon/blob/master/icons/webflow/webflow-original.svg" title="Git" alt="Git" width="30" height="30"/>
-  </a>
-  <h1>
+  <h2>
+    <a href="https://shushengli.webflow.io/">
+      <img src="https://github.com/devicons/devicon/blob/master/icons/webflow/webflow-original.svg" title="Git" alt="Git" width="40" height="40"/>
+    </a>
     <-- My Portfolio
-  </h1>
+  </h2>
 </div>
 <div align="center">
   <img src="https://komarev.com/ghpvc/?username=Shusheng-Li&style=flat-square&color=blue" alt=""/>

@@ -8,15 +8,15 @@
   </a>
 </div>
 <div align="center">
+  <img src="https://komarev.com/ghpvc/?username=Shusheng-Li&style=flat-square&color=blue" alt=""/>
+</div>
+<div align="center">
   <h3>
     <a href="https://shushengli.webflow.io/">
       <img src="https://github.com/devicons/devicon/blob/master/icons/webflow/webflow-original.svg" title="Git" alt="Git" width="30" height="30"/>
+      <-- My Portfolio
     </a>
-    <-- My Portfolio
   </h3>
-</div>
-<div align="center">
-  <img src="https://komarev.com/ghpvc/?username=Shusheng-Li&style=flat-square&color=blue" alt=""/>
 </div>
 <div align="center">
   <h1>

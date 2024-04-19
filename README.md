@@ -7,7 +7,7 @@
       <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
   </a>
   <a href="https://shushengli.webflow.io/">
-    <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
+      <img src="https://github.com/devicons/devicon/blob/master/icons/webflow/webflow-original.svg" title="Git" alt="Git" width="40" height="40"/>
   </a>
 </div>
 <div align="center">

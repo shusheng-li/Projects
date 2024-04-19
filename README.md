@@ -10,7 +10,7 @@
 <div align="center">
   <h2>
     <a href="https://shushengli.webflow.io/">
-      <img src="https://github.com/devicons/devicon/blob/master/icons/webflow/webflow-original.svg" title="Git" alt="Git" width="40" height="40"/>
+      <img src="https://github.com/devicons/devicon/blob/master/icons/webflow/webflow-original.svg" title="Git" alt="Git" width="30" height="30"/>
     </a>
     <-- My Portfolio
   </h2>

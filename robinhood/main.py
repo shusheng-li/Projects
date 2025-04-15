@@ -1,55 +1,57 @@
-Project Setup Instructions
+from flask import Flask, jsonify
+from flask_cors import CORS
+from flask_restful import reqparse, abort
+import yfinance as yf
+from pymongo import MongoClient
+from bson.json_util import dumps
+import certifi
 
-To set up this project locally, please follow the steps below:
 
-1. Install Python dependencies using pip:
-    ```
-    pip3 install -r requirements.txt
-    ```
+app = Flask(__name__)
+CORS(app)
 
-2. Upgrade yfinance and ensure no caching:
-    ```
-    pip3 install yfinance --upgrade --no-cache-dir
-    ```
+cluster = MongoClient("mongodb+srv://shushengli:12345@cluster0.8edbape.mongodb.net/", tlsCAFile=certifi.where())
+db = cluster["SellScaleHood"]
+portfolio_db = db["portfolio"]
 
-3. Install Node.js using Homebrew:
-    ```
-    brew install node
-    ```
+try:
+    cluster.admin.command('ping')
+    print("Pinged your deployment. You successfully connected to MongoDB!")
+except Exception as e:
+    print(e)
 
-4. If the Node.js installation encounters issues, you may need to perform the following steps:
-    - Remove existing Node.js modules:
-        ```
-        rm -rf node_modules
-        ```
-    - Reinstall Node.js dependencies using npm:
-        ```
-        npm install
-        ```
+@app.route("/api/query/<string:ticker>", methods=['GET'])
+def query(ticker: str):
+    # abort_no_exist(ticker)
+    info = yf.Ticker(ticker).info
+    if info["trailingPegRatio"]:
+        return yf.Ticker(ticker).info
+    else:
+        return "", 404
 
-5. Install react-router-dom using npm:
-    ```
-    npm install react-router-dom
-    ```
+@app.route("/api/buy/<string:ticker>/<int:quantity>", methods=["POST"])
+def buy(ticker: str, quantity: int):
+    ticker = ticker.upper()
+    my_stock = portfolio_db.find_one({"_id": ticker})
+    info = yf.Ticker(ticker).info
+    if not info["trailingPegRatio"]:
+        return "", 404
+    if my_stock:
+        update_quantity = my_stock["quantity"] + quantity
+        portfolio_db.update_one({"_id":ticker}, {"$set": {"quantity": update_quantity}})
+    else:
+        entry = {"_id": ticker,
+                    "ticker": ticker,
+                    "quantity": quantity}
+        portfolio_db.insert_one(entry)
+    return portfolio_db.find_one({"_id": ticker}), 201
 
-6. Install react-hook-form using npm:
-    ```
-    npm install react-hook-form
-    ```
+@app.route("/api/portfolio", methods=["GET"])
+def portfolio():
+    return jsonify(list(portfolio_db.find()))
+    
+#abort(409, id already exist)
+#abort(404, id doesn't exist)
 
-(To change from online ip to local):
-
-1. Change `http://35.212.230.76/api/' ---> `http://127.0.0.1:50000/api/' 
-    for Query.tsx, Buy.tsx, and Portfolio.tsx under robinhood/web/src/pages
-
-2. Change 'app.run(host='0.0.0.0', port=5000)' ---> 'app.run(debug=True)' for main.py
-
-To open backend server and connect to mongoDB:
-    ```
-    python3 main.py
-    ```
-
-To get frontend web client up and running:
-    ```
-    npm start
-    ```
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=5000)

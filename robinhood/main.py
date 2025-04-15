@@ -54,4 +54,6 @@ def portfolio():
 #abort(404, id doesn't exist)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5001)
+    # for local run
+    # app.run(debug=True)

@@ -12,7 +12,7 @@ export function Query() {
 
     const handleSearch = async () => {
         try {
-            const response = await fetch(`http://35.212.230.76/api/query/${symbol}`);
+            const response = await fetch(`http://35.197.105.100/api/query/${symbol}`);
             // const response = await fetch(`http://127.0.0.1:5001/api/query/${symbol}`);
             if (!response.ok) {
                 throw new Error('Failed to fetch stock information');

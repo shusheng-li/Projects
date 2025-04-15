@@ -34,10 +34,10 @@ To set up this project, please follow the steps below:
 
 (To change from online ip to local):
  
- 1. Change `http://35.212.230.76/api/' ---> `http://127.0.0.1:50000/api/' 
+ 1. Change `http://35.197.105.100/api/' ---> `http://127.0.0.1:50000/api/' 
      for Query.tsx, Buy.tsx, and Portfolio.tsx under robinhood/web/src/pages
  
- 2. Change 'app.run(host='0.0.0.0', port=5000)' ---> 'app.run(debug=True)' for main.py
+ 2. Change 'app.run(host='0.0.0.0', port=5001)' ---> 'app.run(debug=True)' for main.py
  
  To open backend server and connect to mongoDB:
      ```

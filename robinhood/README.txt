@@ -1,50 +1,55 @@
-Project Setup Instructions
+# Project Setup Instructions
 
-To set up this project, please follow the steps below:
+This guide provides step-by-step instructions for setting up the backend and frontend of the project locally.
 
-1. Install Python dependencies using pip:
-    ```
-    pip3 install -r requirements.txt
-    ```
+## Backend Setup
 
-2. Install Node.js using Homebrew:
-    ```
-    brew install node
-    ```
-
-3. If the Node.js installation encounters issues, you may need to perform the following steps:
-    - Remove existing Node.js modules:
-        ```
-        rm -rf node_modules
-        ```
-    - Reinstall Node.js dependencies using npm:
-        ```
-        npm install
-        ```
-
-4. Install react-router-dom using npm:
-    ```
-    npm install react-router-dom
-    ```
-
-5. Install react-hook-form using npm:
-    ```
-    npm install react-hook-form
-    ```
-
-(To change from online ip to local):
- 
- 1. Change `http://35.197.105.100/api/' ---> `http://127.0.0.1:50000/api/' 
-     for Query.tsx, Buy.tsx, and Portfolio.tsx under robinhood/web/src/pages
- 
- 2. Change 'app.run(host='0.0.0.0', port=5001)' ---> 'app.run(debug=True)' for main.py
- 
- To open backend server and connect to mongoDB:
+1. **Activate the Python Virtual Environment**
+   - Navigate to the project root directory and activate the virtual environment:
+     ```bash
+     source myenv/bin/activate
      ```
-     python3 main.py
+
+2. **Install Python Dependencies**
+   - Install the required Python packages:
+     ```bash
+     pip install -r requirements.txt
      ```
- 
- To get frontend web client up and running:
+
+3. **Run the Backend Server**
+   - Start the Flask backend server:
+     ```bash
+     python main.py
      ```
+   - The backend will be available at `http://127.0.0.1:5000`.
+
+## Frontend Setup
+
+1. **Navigate to the Frontend Directory**
+   - Change to the `web` directory:
+     ```bash
+     cd web
+     ```
+
+2. **Install Node.js Dependencies**
+   - Install the required Node.js packages:
+     ```bash
+     npm install
+     ```
+
+3. **Run the Frontend Development Server**
+   - Start the React development server:
+     ```bash
      npm start
      ```
+   - The frontend will be available at `http://localhost:3000`.
+
+## Testing the Application
+
+1. Open the frontend in your browser at `http://localhost:3000`.
+2. The frontend will communicate with the backend running locally at `http://127.0.0.1:5000`.
+
+## Notes
+
+- Ensure both the backend and frontend servers are running simultaneously for the application to work.
+- Update any hardcoded API URLs in the frontend to point to `http://127.0.0.1:5000` if necessary.

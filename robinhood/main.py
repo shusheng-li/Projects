@@ -49,11 +49,15 @@ def buy(ticker: str, quantity: int):
 @app.route("/api/portfolio", methods=["GET"])
 def portfolio():
     return jsonify(list(portfolio_db.find()))
+
+@app.route("/", methods=["GET"])
+def default_route():
+    return portfolio()
     
 #abort(409, id already exist)
 #abort(404, id doesn't exist)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5001)
+    # app.run(host='0.0.0.0', port=5000)
     # for local run
-    # app.run(debug=True)
+    app.run(debug=True)

@@ -14,8 +14,8 @@ export function Buy() {
     const handleBuy = async () => {
         // Handle buy action here, e.g., send buy request to backend
         try {
-            const response = await fetch(`http://35.197.105.100/api/buy/${symbol}/${quantity}`, {
-                // const response = await fetch(`http://127.0.0.1:5001/api/buy/${symbol}/${quantity}`, {
+            // const response = await fetch(`http://35.197.105.100/api/buy/${symbol}/${quantity}`, {
+            const response = await fetch(`http://127.0.0.1:5000/api/buy/${symbol}/${quantity}`, {
                 method: "POST",
             });
             if (!response.ok) {

@@ -78,6 +78,21 @@
     color: white;
 }
 
+.book-appointment-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white !important;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.book-appointment-link:hover {
+    background-color: var(--secondary-color) !important;
+}
+
 .footer-bottom {
     background-color: rgba(255, 255, 255, 0.05);
     padding: 1.5rem;

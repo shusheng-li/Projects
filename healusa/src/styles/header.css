@@ -26,15 +26,16 @@
     color: var(--primary-color);
     text-decoration: none;
     transition: color 0.3s ease;
-    white-space: nowrap;
 }
 
 .logo:hover {
     color: var(--secondary-color);
 }
 
-.logo-icon {
-    font-size: 2rem;
+.logo-image {
+    height: 65px;
+    width: auto;
+    object-fit: contain;
 }
 
 .logo-text {

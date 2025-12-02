@@ -2,6 +2,7 @@ import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { LanguageContext, type LanguageContextType } from '../context/LanguageContext';
 import '../styles/header.css';
+import logoPNG from '../assets/logo3.png';
 
 export function Header() {
     const { language, setLanguage, t } = useContext(LanguageContext) as LanguageContextType;
@@ -11,7 +12,7 @@ export function Header() {
         <header className="header">
             <div className="header-container">
                 <Link to="/" className="logo">
-                    <span className="logo-icon">🏥</span>
+                    <img src={logoPNG} alt="HealUSA Logo" className="logo-image" />
                     <span className="logo-text">HealUSA</span>
                 </Link>
 

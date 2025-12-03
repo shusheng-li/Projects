@@ -8,6 +8,9 @@ export interface LanguageContextType {
 
 const translations = {
     en: {
+        // Global
+        'global.tagline': 'Dedicated to Chinese patients, connecting with top hospitals across the United States, providing you with reliable medical services in the USA',
+
         // Navigation
         'nav.home': 'Home',
         'nav.about': 'About',
@@ -147,6 +150,9 @@ const translations = {
         'footer.copyright': '© 2024 HealUSA. All rights reserved.',
     },
     zh: {
+        // 全局
+        'global.tagline': '专注华人患者，连接全美国顶级医院，为您提供可信赖的赴美就医服务',
+
         // 导航
         'nav.home': '首页',
         'nav.about': '关于我们',

@@ -2,12 +2,17 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { LanguageContext, type LanguageContextType } from '../context/LanguageContext';
 import '../styles/pages.css';
+import logoPNG from '../assets/logo.png';
 
 export function Home() {
     const { t } = useContext(LanguageContext) as LanguageContextType;
 
     return (
         <div className="page home-page">
+            <div className="page-banner">
+                <img src={logoPNG} alt="HealUSA Logo" className="page-logo" />
+                <p className="page-tagline">{t('global.tagline')}</p>
+            </div>
             {/* Hero Section */}
             <section className="hero">
                 <div className="hero-content">

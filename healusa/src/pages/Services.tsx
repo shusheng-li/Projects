@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { LanguageContext, type LanguageContextType } from '../context/LanguageContext';
 import '../styles/pages.css';
+import logoPNG from '../assets/logo.png';
 
 export function Services() {
     const { t } = useContext(LanguageContext) as LanguageContextType;
@@ -52,6 +53,10 @@ export function Services() {
 
     return (
         <div className="page services-page">
+            <div className="page-banner">
+                <img src={logoPNG} alt="HealUSA Logo" className="page-logo" />
+                <p className="page-tagline">{t('global.tagline')}</p>
+            </div>
             {/* Hero Section */}
             <section className="page-hero">
                 <h1>{t('services.title')}</h1>

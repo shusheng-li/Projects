@@ -6,6 +6,8 @@ import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Services } from './pages/Services';
 import { ProcedureCatalog } from './pages/ProcedureCatalog';
+import { Story } from './pages/Story';
+import { Letter } from './pages/Letter';
 import { Contact } from './pages/Contact';
 import { Appointment } from './pages/Appointment';
 import { NotFound } from './pages/NotFound';
@@ -24,6 +26,8 @@ function App() {
                 <Route path="/about" element={<About />} />
                 <Route path="/services" element={<Services />} />
                 <Route path="/procedures" element={<ProcedureCatalog />} />
+                <Route path="/story" element={<Story />} />
+                <Route path="/letter" element={<Letter />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/appointment" element={<Appointment />} />
                 <Route path="*" element={<NotFound />} />

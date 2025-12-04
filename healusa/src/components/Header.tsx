@@ -29,6 +29,12 @@ export function Header() {
                     <Link to="/procedures" className="nav-link" onClick={() => setMenuOpen(false)}>
                         {t('nav.procedures')}
                     </Link>
+                    <Link to="/story" className="nav-link" onClick={() => setMenuOpen(false)}>
+                        {t('nav.story')}
+                    </Link>
+                    <Link to="/letter" className="nav-link" onClick={() => setMenuOpen(false)}>
+                        {t('nav.letter')}
+                    </Link>
                     <Link to="/contact" className="nav-link" onClick={() => setMenuOpen(false)}>
                         {t('nav.contact')}
                     </Link>

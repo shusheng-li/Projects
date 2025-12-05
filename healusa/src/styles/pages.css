@@ -819,8 +819,8 @@ a:hover {
 /* Story Page */
 .story-page .story-subtitle {
     font-size: 1.3rem;
-    color: var(--text-light);
-    font-weight: 400;
+    color: var(--text-dark);
+    font-weight: 500;
     font-style: italic;
 }
 

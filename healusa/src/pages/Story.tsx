@@ -39,7 +39,6 @@ export function Story() {
                     <p className="story-text">{t('story.section1_p5')}</p>
                     <p className="story-text">{t('story.section1_p6')}</p>
                     <p className="story-text">{t('story.section1_p7')}</p>
-                    <p className="story-text">{t('story.section1_p8')}</p>
                 </div>
 
                 <div className="story-divider"></div>
@@ -157,7 +156,6 @@ export function Story() {
                     <p className="story-text">{t('story.section8_p3')}</p>
                     <p className="story-text story-highlight">{t('story.section8_highlight')}</p>
                     <p className="story-text">{t('story.section8_p4')}</p>
-                    <p className="story-text">{t('story.section8_p5')}</p>
 
                     <div className="story-signature">
                         <p className="signature-name">{t('story.signature_name')}</p>

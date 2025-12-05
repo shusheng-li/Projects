@@ -22,10 +22,10 @@ export function Footer() {
                 <div className="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><Link to="/">{t('nav.home')}</Link></li>
-                        <li><Link to="/about">{t('nav.about')}</Link></li>
-                        <li><Link to="/services">{t('nav.services')}</Link></li>
-                        <li><Link to="/procedures">{t('nav.procedures')}</Link></li>
+                        <li><Link to="/" onClick={() => window.scrollTo(0, 0)}>{t('nav.home')}</Link></li>
+                        <li><Link to="/about" onClick={() => window.scrollTo(0, 0)}>{t('nav.about')}</Link></li>
+                        <li><Link to="/services" onClick={() => window.scrollTo(0, 0)}>{t('nav.services')}</Link></li>
+                        <li><Link to="/procedures" onClick={() => window.scrollTo(0, 0)}>{t('nav.procedures')}</Link></li>
                     </ul>
                 </div>
 
@@ -43,7 +43,7 @@ export function Footer() {
                     <h4>Contact Info</h4>
                     <p>📞 +1 (212) 555-0123<br />📧 info@healusa.com</p>
                     <p>🕐 Mon-Fri: 9AM-6PM<br />Sat: 10AM-4PM EST</p>
-                    <Link to="/appointment" className="book-appointment-link">{t('nav.appointment')}</Link>
+                    <Link to="/appointment" className="book-appointment-link" onClick={() => window.scrollTo(0, 0)}>{t('nav.appointment')}</Link>
                 </div>
             </div>
 

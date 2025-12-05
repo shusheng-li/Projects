@@ -110,7 +110,6 @@ export function Letter() {
                 {/* Signature */}
                 <div className="letter-signature">
                     <p className="signature-name">{t('letter.signature_name')}</p>
-                    <p className="signature-title">{t('letter.signature_title')}</p>
                     <p className="signature-message">{t('letter.signature_message')}</p>
                 </div>
             </section>

@@ -101,15 +101,15 @@ export function Appointment() {
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="email">{t('appointment.email')} *</label>
+                                <label htmlFor="email">{t('appointment.wechat')} *</label>
                                 <input
-                                    type="email"
+                                    type="text"
                                     id="email"
                                     name="email"
                                     value={formData.email}
                                     onChange={handleChange}
                                     required
-                                    placeholder={t('appointment.email_placeholder')}
+                                    placeholder={t('appointment.wechat_placeholder')}
                                 />
                             </div>
                         </div>

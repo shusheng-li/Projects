@@ -89,15 +89,15 @@ export function Contact() {
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="email">{t('contact.email_address')} *</label>
+                                <label htmlFor="email">{t('contact.wechat')} *</label>
                                 <input
-                                    type="email"
+                                    type="text"
                                     id="email"
                                     name="email"
                                     value={formData.email}
                                     onChange={handleChange}
                                     required
-                                    placeholder={t('contact.email_placeholder')}
+                                    placeholder={t('contact.wechat_placeholder')}
                                 />
                             </div>
 

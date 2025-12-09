@@ -43,7 +43,7 @@ export function Footer() {
                     <h4>Contact Info</h4>
                     <p>📞 +1 (212) 555-0123<br />📧 info@healusa.com</p>
                     <p>🕐 Mon-Fri: 9AM-6PM<br />Sat: 10AM-4PM EST</p>
-                    <Link to="/appointment" className="book-appointment-link" onClick={() => window.scrollTo(0, 0)}>{t('nav.appointment')}</Link>
+                    <Link to="/appointment" className="book-appointment-link" onClick={() => window.scrollTo(0, 0)}>{t('nav.contact')}</Link>
                 </div>
             </div>
 

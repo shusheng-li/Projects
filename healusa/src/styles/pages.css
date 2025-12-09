@@ -45,7 +45,7 @@ html {
 }
 
 .page-logo {
-    height: 50px;
+    height: 70px;
     width: auto;
     object-fit: contain;
     flex-shrink: 0;
@@ -363,6 +363,156 @@ a:hover {
     font-weight: 500;
 }
 
+/* Journey Flowchart */
+.journey-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.journey-flowchart {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 0;
+    position: relative;
+}
+
+.flow-step {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.12);
+    border: 2px solid var(--primary-color);
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+/* Connector arrows between steps */
+.flow-step:not(:nth-child(4n))::after {
+    content: '→';
+    position: absolute;
+    top: 15px;
+    right: -1.5rem;
+    width: 1.5rem;
+    height: auto;
+    color: var(--primary-color);
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    animation: slideRight 2s ease-in-out infinite;
+}
+
+@keyframes slideRight {
+
+    0%,
+    100% {
+        opacity: 0.6;
+        transform: translateX(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(5px);
+    }
+}
+
+.flow-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 102, 204, 0.2);
+    border-color: var(--secondary-color);
+}
+
+.step-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+    z-index: 2;
+}
+
+.step-icon {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 1.5rem 0 1rem 0;
+}
+
+.flow-step h3 {
+    color: var(--primary-color);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 700;
+    min-height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flow-step ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+}
+
+.flow-step ul li {
+    color: var(--text-dark);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 0.6rem;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.flow-step ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.journey-cta {
+    margin-top: 3rem;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(0, 102, 204, 0.1), rgba(0, 168, 107, 0.1));
+    border-radius: 1rem;
+    border: 2px solid var(--primary-color);
+}
+
+.journey-cta p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0;
+}
+
 /* Checklist */
 .checklist {
     display: grid;
@@ -473,7 +623,7 @@ a:hover {
     }
 
     .page-logo {
-        height: 40px;
+        height: 55px;
     }
 
     .page-tagline {
@@ -730,9 +880,49 @@ a:hover {
     }
 }
 
+.appointment-container {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
 .appointment-form-wrapper {
     max-width: 600px;
-    margin: 0 auto;
+}
+
+.qr-code-section {
+    position: sticky;
+    top: 100px;
+}
+
+.qr-code-card {
+    background: white;
+    border: 2px solid var(--primary-color);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+}
+
+.qr-code-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.qr-code-image {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.qr-code-text {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin: 0;
 }
 
 .info-box {
@@ -807,12 +997,68 @@ a:hover {
         grid-template-columns: 1fr;
     }
 
+    .appointment-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .qr-code-section {
+        position: static;
+        order: -1;
+    }
+
+    .qr-code-card {
+        padding: 1.5rem;
+    }
+
+    .qr-code-image {
+        max-width: 220px;
+    }
+
     .hero-buttons {
         flex-direction: column;
     }
 
     .hero-buttons .btn {
         width: 100%;
+    }
+
+    .flow-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .flow-arrow {
+        display: none;
+    }
+
+    .flow-arrow-down {
+        font-size: 2rem;
+        margin: 0.5rem 0;
+    }
+
+    .flow-box {
+        padding: 1.5rem;
+    }
+
+    .flow-icon {
+        font-size: 2.5rem;
+    }
+
+    .flow-box h3 {
+        font-size: 1rem;
+    }
+
+    .flow-box p {
+        font-size: 0.85rem;
+    }
+
+    .journey-cta {
+        padding: 1.5rem;
+    }
+
+    .journey-cta p {
+        font-size: 1rem;
     }
 }
 
@@ -1202,5 +1448,32 @@ a:hover {
 
     .letter-signature {
         text-align: center;
+    }
+
+    /* Journey Flowchart Mobile */
+    .journey-flowchart {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .step-badge {
+        top: -12px;
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .step-icon {
+        font-size: 2rem;
+        margin: 1rem 0 0.75rem 0;
+    }
+
+    .flow-step h3 {
+        font-size: 0.95rem;
+        min-height: auto;
+    }
+
+    .flow-step ul li {
+        font-size: 0.8rem;
     }
 }

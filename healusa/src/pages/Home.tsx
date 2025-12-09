@@ -22,7 +22,7 @@ export function Home() {
                         <Link to="/procedures" className="btn btn-primary">
                             {t('nav.procedures')}
                         </Link>
-                        <Link to="/contact" className="btn btn-secondary">
+                        <Link to="/appointment" className="btn btn-secondary">
                             {t('nav.contact')}
                         </Link>
                     </div>
@@ -32,31 +32,37 @@ export function Home() {
                 </div>
             </section>
 
-            {/* Features Section */}
+            {/* Why Choose HealUSA */}
             <section className="features">
-                <h2>{t('home.features')}</h2>
+                <h2>{t('about.why_choose')}</h2>
                 <div className="features-grid">
                     <div className="feature-card">
+                        <div className="feature-icon">📋</div>
+                        <h3>{t('story.service1_title')}</h3>
+                        <p>{t('story.service1_desc')}</p>
+                    </div>
+                    <div className="feature-card">
                         <div className="feature-icon">🏥</div>
-                        <h3>{t('home.feature1')}</h3>
-                        <p>{t('home.feature1_desc')}</p>
-                    </div>
-                    <div className="feature-card">
-                        <div className="feature-icon">👨‍⚕️</div>
-                        <h3>{t('home.feature2')}</h3>
-                        <p>{t('home.feature2_desc')}</p>
-                    </div>
-                    <div className="feature-card">
-                        <div className="feature-icon">🌐</div>
-                        <h3>{t('home.feature3')}</h3>
-                        <p>{t('home.feature3_desc')}</p>
+                        <h3>{t('story.service2_title')}</h3>
+                        <p>{t('story.service2_desc')}</p>
                     </div>
                     <div className="feature-card">
                         <div className="feature-icon">✅</div>
-                        <h3>{t('home.feature4')}</h3>
-                        <p>{t('home.feature4_desc')}</p>
+                        <h3>{t('story.service3_title')}</h3>
+                        <p>{t('story.service3_desc')}</p>
+                    </div>
+                    <div className="feature-card">
+                        <div className="feature-icon">💵</div>
+                        <h3>{t('story.service4_title')}</h3>
+                        <p>{t('story.service4_desc')}</p>
+                    </div>
+                    <div className="feature-card">
+                        <div className="feature-icon">🤝</div>
+                        <h3>{t('story.service5_title')}</h3>
+                        <p>{t('story.service5_desc')}</p>
                     </div>
                 </div>
+                <p className="story-text" style={{ textAlign: 'center', marginTop: '2rem', maxWidth: '800px', marginLeft: 'auto', marginRight: 'auto' }}>{t('story.section6_p3')}</p>
             </section>
 
             {/* CTA Section */}

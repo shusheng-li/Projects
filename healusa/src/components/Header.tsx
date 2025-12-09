@@ -35,9 +35,6 @@ export function Header() {
                     <Link to="/letter" className="nav-link" onClick={() => setMenuOpen(false)}>
                         {t('nav.letter')}
                     </Link>
-                    <Link to="/contact" className="nav-link" onClick={() => setMenuOpen(false)}>
-                        {t('nav.contact')}
-                    </Link>
                 </nav>
 
                 <div className="header-actions">
@@ -50,7 +47,7 @@ export function Header() {
                     </button>
 
                     <Link to="/appointment" className="btn btn-primary btn-sm">
-                        {t('nav.appointment')}
+                        {t('nav.contact')}
                     </Link>
 
                     <button

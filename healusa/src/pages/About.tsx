@@ -79,14 +79,132 @@ export function About() {
                 </div>
             </section>
 
-            {/* Why Choose Us */}
+            {/* Journey Process */}
             <section className="content-section">
-                <h2>{t('about.why_choose')}</h2>
-                <div className="checklist">
-                    <div className="check-item">✓ {t('about.reason1')}</div>
-                    <div className="check-item">✓ {t('about.reason2')}</div>
-                    <div className="check-item">✓ {t('about.reason3')}</div>
-                    <div className="check-item">✓ {t('about.reason4')}</div>
+                <h2>{t('about.journey_title')}</h2>
+                <p className="journey-intro">{t('about.journey_subtitle')}</p>
+
+                <div className="journey-flowchart">
+                    <div className="flow-step">
+                        <div className="step-badge">1</div>
+                        <div className="step-icon">📋</div>
+                        <h3>{t('about.step1_title')}</h3>
+                        <ul>
+                            <li>{t('about.step1_point1')}</li>
+                            <li>{t('about.step1_point2')}</li>
+                            <li>{t('about.step1_point3')}</li>
+                            <li>{t('about.step1_point4')}</li>
+                        </ul>
+                    </div>
+
+                    <div className="flow-step">
+                        <div className="step-badge">2</div>
+                        <div className="step-icon">🏥</div>
+                        <h3>{t('about.step2_title')}</h3>
+                        <ul>
+                            <li>{t('about.step2_point1')}</li>
+                            <li>{t('about.step2_point2')}</li>
+                            <li>{t('about.step2_point3')}</li>
+                        </ul>
+                    </div>
+
+                    <div className="flow-step">
+                        <div className="step-badge">3</div>
+                        <div className="step-icon">✈️</div>
+                        <h3>{t('about.step3_title')}</h3>
+                        <ul>
+                            <li>{t('about.step3_point1')}</li>
+                            <li>{t('about.step3_point2')}</li>
+                            <li>{t('about.step3_point3')}</li>
+                            <li>{t('about.step3_point4')}</li>
+                        </ul>
+                    </div>
+
+                    <div className="flow-step">
+                        <div className="step-badge">4</div>
+                        <div className="step-icon">💼</div>
+                        <h3>{t('about.step4_title')}</h3>
+                        <ul>
+                            <li>{t('about.step4_point1')}</li>
+                            <li>{t('about.step4_point2')}</li>
+                            <li>{t('about.step4_point3')}</li>
+                            <li>{t('about.step4_point4')}</li>
+                        </ul>
+                    </div>
+
+                    <div className="flow-step">
+                        <div className="step-badge">5</div>
+                        <div className="step-icon">✅</div>
+                        <h3>{t('about.step5_title')}</h3>
+                        <ul>
+                            <li>{t('about.step5_point1')}</li>
+                            <li>{t('about.step5_point2')}</li>
+                            <li>{t('about.step5_point3')}</li>
+                        </ul>
+                    </div>
+
+                    <div className="flow-step">
+                        <div className="step-badge">6</div>
+                        <div className="step-icon">🛫</div>
+                        <h3>{t('about.step6_title')}</h3>
+                        <ul>
+                            <li>{t('about.step6_point1')}</li>
+                            <li>{t('about.step6_point2')}</li>
+                            <li>{t('about.step6_point3')}</li>
+                            <li>{t('about.step6_point4')}</li>
+                        </ul>
+                    </div>
+
+                    <div className="flow-step">
+                        <div className="step-badge">7</div>
+                        <div className="step-icon">🏨</div>
+                        <h3>{t('about.step7_title')}</h3>
+                        <ul>
+                            <li>{t('about.step7_point1')}</li>
+                            <li>{t('about.step7_point2')}</li>
+                            <li>{t('about.step7_point3')}</li>
+                        </ul>
+                    </div>
+
+                    <div className="flow-step">
+                        <div className="step-badge">8</div>
+                        <div className="step-icon">🏥</div>
+                        <h3>{t('about.step8_title')}</h3>
+                        <ul>
+                            <li>{t('about.step8_point1')}</li>
+                            <li>{t('about.step8_point2')}</li>
+                            <li>{t('about.step8_point3')}</li>
+                            <li>{t('about.step8_point4')}</li>
+                        </ul>
+                    </div>
+
+                    <div className="flow-step">
+                        <div className="step-badge">9</div>
+                        <div className="step-icon">💊</div>
+                        <h3>{t('about.step9_title')}</h3>
+                        <ul>
+                            <li>{t('about.step9_point1')}</li>
+                            <li>{t('about.step9_point2')}</li>
+                            <li>{t('about.step9_point3')}</li>
+                            <li>{t('about.step9_point4')}</li>
+                        </ul>
+                    </div>
+
+                    <div className="flow-step">
+                        <div className="step-badge">10</div>
+                        <div className="step-icon">🔄</div>
+                        <h3>{t('about.step10_title')}</h3>
+                        <ul>
+                            <li>{t('about.step10_point1')}</li>
+                            <li>{t('about.step10_point2')}</li>
+                            <li>{t('about.step10_point3')}</li>
+                            <li>{t('about.step10_point4')}</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div className="journey-cta">
+                    <p>{t('about.journey_cta')}</p>
                 </div>
             </section>
         </div>

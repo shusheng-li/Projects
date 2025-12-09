@@ -117,7 +117,7 @@ export function Story() {
                             <p>{t('story.service2_desc')}</p>
                         </div>
                         <div className="story-service-item">
-                            <span className="service-icon">💰</span>
+                            <span className="service-icon">✅</span>
                             <h3>{t('story.service3_title')}</h3>
                             <p>{t('story.service3_desc')}</p>
                         </div>

@@ -98,11 +98,8 @@ export function Letter() {
                     <p className="letter-text letter-strong">{t('letter.cta1')}</p>
                     <p className="letter-text">{t('letter.cta2')}</p>
                     <div className="letter-buttons">
-                        <Link to="/contact" className="btn btn-primary btn-large">
+                        <Link to="/appointment" className="btn btn-primary btn-large">
                             {t('nav.contact')}
-                        </Link>
-                        <Link to="/appointment" className="btn btn-secondary btn-large">
-                            {t('nav.appointment')}
                         </Link>
                     </div>
                 </div>

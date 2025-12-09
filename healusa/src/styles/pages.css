@@ -818,7 +818,7 @@ a:hover {
 .contact-form,
 .appointment-form {
     background-color: var(--bg-light);
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: 1rem;
 }
 
@@ -831,13 +831,14 @@ a:hover {
     margin-bottom: 0.5rem;
     font-weight: 600;
     color: var(--text-dark);
+    font-size: 0.95rem;
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select {
     width: 100%;
-    padding: 0.75rem;
+    padding: 0.875rem;
     font-size: 1rem;
     border: 1px solid var(--border-color);
     border-radius: 0.5rem;
@@ -868,6 +869,16 @@ a:hover {
     animation: slideDown 0.3s ease;
 }
 
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    animation: slideDown 0.3s ease;
+}
+
 @keyframes slideDown {
     from {
         opacity: 0;
@@ -882,25 +893,27 @@ a:hover {
 
 .appointment-container {
     display: grid;
-    grid-template-columns: 400px 1fr;
-    gap: 3rem;
+    grid-template-columns: 380px 1fr;
+    gap: 2.5rem;
     align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .appointment-form-wrapper {
-    max-width: 600px;
+    max-width: 700px;
 }
 
 .qr-code-section {
     position: sticky;
-    top: 100px;
+    top: 120px;
 }
 
 .qr-code-card {
     background: white;
     border: 2px solid var(--primary-color);
     border-radius: 1rem;
-    padding: 2rem;
+    padding: 2rem 1.5rem;
     text-align: center;
     box-shadow: var(--shadow-lg);
 }
@@ -908,12 +921,12 @@ a:hover {
 .qr-code-card h3 {
     color: var(--primary-color);
     margin-bottom: 1.5rem;
-    font-size: 1.3rem;
+    font-size: 1.25rem;
 }
 
 .qr-code-image {
     width: 100%;
-    max-width: 280px;
+    max-width: 260px;
     height: auto;
     border-radius: 0.5rem;
     margin-bottom: 1rem;
@@ -1000,6 +1013,11 @@ a:hover {
     .appointment-container {
         grid-template-columns: 1fr;
         gap: 2rem;
+        padding: 0 1rem;
+    }
+
+    .appointment-form-wrapper {
+        max-width: 100%;
     }
 
     .qr-code-section {
@@ -1009,10 +1027,16 @@ a:hover {
 
     .qr-code-card {
         padding: 1.5rem;
+        max-width: 400px;
+        margin: 0 auto;
     }
 
     .qr-code-image {
-        max-width: 220px;
+        max-width: 240px;
+    }
+
+    .appointment-form {
+        padding: 1.5rem;
     }
 
     .hero-buttons {

@@ -1,5 +1,6 @@
 import { useContext, useState } from 'react';
 import { LanguageContext, type LanguageContextType } from '../context/LanguageContext';
+import emailjs from '@emailjs/browser';
 import '../styles/pages.css';
 import logoPNG from '../assets/logo.png';
 import wechatQR from '../assets/wechat_qr.png';
@@ -8,7 +9,7 @@ export function Appointment() {
     const { t } = useContext(LanguageContext) as LanguageContextType;
     const [formData, setFormData] = useState({
         name: '',
-        email: '',
+        wechat: '',
         phone: '',
         procedure: '',
         date: '',
@@ -16,6 +17,8 @@ export function Appointment() {
         notes: ''
     });
     const [submitted, setSubmitted] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [error, setError] = useState('');
 
     const procedures = [
         'Dental Implants',
@@ -44,22 +47,68 @@ export function Appointment() {
         }));
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log('Contact form submitted:', formData);
-        setSubmitted(true);
-        setTimeout(() => {
-            setFormData({
-                name: '',
-                email: '',
-                phone: '',
-                procedure: '',
-                date: '',
-                time: '',
-                notes: ''
-            });
-            setSubmitted(false);
-        }, 3000);
+        setIsSubmitting(true);
+        setError('');
+
+        try {
+            // Initialize EmailJS with your public key
+            emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+
+            // Prepare template parameters
+            const templateParams = {
+                from_name: formData.name,
+                patient_name: formData.name,
+                patient_wechat: formData.wechat,
+                patient_phone: formData.phone,
+                procedure_type: formData.procedure,
+                appointment_date: formData.date,
+                appointment_time: formData.time,
+                additional_notes: formData.notes || 'No additional notes',
+                message: [
+                    `New appointment request from ${formData.name}`,
+                    '',
+                    `Looking for help in ${formData.procedure}`,
+                    `Preferred on ${formData.date} at ${formData.time}`,
+                    '',
+                    `Phone: ${formData.phone}`,
+                    `Contact WeChat: ${formData.wechat}`,
+                    '',
+                    `Notes: ${formData.notes || 'N/A'}`
+                ].join('\n')
+            };
+
+            // Send email using EmailJS
+            const response = await emailjs.send(
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+                templateParams
+            );
+
+            console.log('Email sent successfully:', response);
+            setSubmitted(true);
+
+            // Reset form after 3 seconds
+            setTimeout(() => {
+                setFormData({
+                    name: '',
+                    wechat: '',
+                    phone: '',
+                    procedure: '',
+                    date: '',
+                    time: '',
+                    notes: ''
+                });
+                setSubmitted(false);
+            }, 3000);
+
+        } catch (err) {
+            console.error('Failed to send email:', err);
+            setError('Failed to send appointment request. Please try again or contact us directly.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     // Get minimum date (today)
@@ -96,6 +145,12 @@ export function Appointment() {
                             </div>
                         )}
 
+                        {error && (
+                            <div className="error-message">
+                                ✗ {error}
+                            </div>
+                        )}
+
                         <form onSubmit={handleSubmit} className="appointment-form">
                             <div className="form-row">
                                 <div className="form-group">
@@ -112,12 +167,12 @@ export function Appointment() {
                                 </div>
 
                                 <div className="form-group">
-                                    <label htmlFor="email">{t('contact.wechat')} *</label>
+                                    <label htmlFor="wechat">{t('contact.wechat')} *</label>
                                     <input
                                         type="text"
-                                        id="email"
-                                        name="email"
-                                        value={formData.email}
+                                        id="wechat"
+                                        name="wechat"
+                                        value={formData.wechat}
                                         onChange={handleChange}
                                         required
                                         placeholder={t('contact.wechat_placeholder')}
@@ -199,8 +254,8 @@ export function Appointment() {
                                 ></textarea>
                             </div>
 
-                            <button type="submit" className="btn btn-primary btn-large">
-                                {t('contact.book')}
+                            <button type="submit" className="btn btn-primary btn-large" disabled={isSubmitting}>
+                                {isSubmitting ? 'Sending...' : t('contact.book')}
                             </button>
                         </form>
 

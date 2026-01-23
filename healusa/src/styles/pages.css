@@ -1156,6 +1156,30 @@ a:hover {
 }
 
 /* Story Page */
+.story-page {
+    background-size: 70%;
+    background-position: center 50%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.story-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.80);
+    z-index: 0;
+}
+
+.story-page>* {
+    position: relative;
+    z-index: 1;
+}
+
 .story-page .story-subtitle {
     font-size: 1.3rem;
     color: var(--text-dark);
@@ -1336,6 +1360,30 @@ a:hover {
 }
 
 /* Letter Page */
+.letter-page {
+    background-size: 90%;
+    background-position: center 25%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.letter-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.85);
+    z-index: 0;
+}
+
+.letter-page>* {
+    position: relative;
+    z-index: 1;
+}
+
 .letter-page .page-hero {
     margin-bottom: 3rem;
 }

@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 import { LanguageContext, type LanguageContextType } from '../context/LanguageContext';
 import '../styles/pages.css';
 import logoPNG from '../assets/logo.png';
+import letterBackground from '../assets/personal_photo_12.jpeg';
 
 export function Letter() {
     const { t } = useContext(LanguageContext) as LanguageContextType;
 
     return (
-        <div className="page letter-page">
+        <div className="page letter-page" style={{ backgroundImage: `url(${letterBackground})` }}>
             <div className="page-banner">
                 <img src={logoPNG} alt="HealUSA Logo" className="page-logo" />
                 <p className="page-tagline">{t('global.tagline')}</p>

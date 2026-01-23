@@ -2,12 +2,13 @@ import { useContext } from 'react';
 import { LanguageContext, type LanguageContextType } from '../context/LanguageContext';
 import '../styles/pages.css';
 import logoPNG from '../assets/logo.png';
+import storyBackground from '../assets/personal_photo_9.jpeg';
 
 export function Story() {
     const { t } = useContext(LanguageContext) as LanguageContextType;
 
     return (
-        <div className="page story-page">
+        <div className="page story-page" style={{ backgroundImage: `url(${storyBackground})` }}>
             <div className="page-banner">
                 <img src={logoPNG} alt="HealUSA Logo" className="page-logo" />
                 <p className="page-tagline">{t('global.tagline')}</p>

@@ -11,7 +11,7 @@ export function Footer() {
             <div className="footer-container">
                 <div className="footer-section">
                     <h3>🏥 HealUSA</h3>
-                    <p>Professional medical assistance for Chinese patients seeking healthcare in the USA</p>
+                    <p>{t('footer.tagline')}</p>
                     <div className="social-links">
                         <a href="#" aria-label="Facebook">f</a>
                         <a href="#" aria-label="WeChat">微</a>
@@ -20,7 +20,7 @@ export function Footer() {
                 </div>
 
                 <div className="footer-section">
-                    <h4>Quick Links</h4>
+                    <h4>{t('footer.quick_links')}</h4>
                     <ul>
                         <li><Link to="/" onClick={() => window.scrollTo(0, 0)}>{t('nav.home')}</Link></li>
                         <li><Link to="/about" onClick={() => window.scrollTo(0, 0)}>{t('nav.about')}</Link></li>
@@ -30,19 +30,19 @@ export function Footer() {
                 </div>
 
                 <div className="footer-section">
-                    <h4>Services</h4>
+                    <h4>{t('footer.services')}</h4>
                     <ul>
-                        <li><a href="#dental">Dental</a></li>
-                        <li><a href="#vision">Vision Care</a></li>
-                        <li><a href="#orthopedic">Orthopedic</a></li>
-                        <li><a href="#cardiology">Cardiology</a></li>
+                        <li><a href="#dental">{t('footer.dental')}</a></li>
+                        <li><a href="#vision">{t('footer.vision')}</a></li>
+                        <li><a href="#orthopedic">{t('footer.orthopedic')}</a></li>
+                        <li><a href="#cardiology">{t('footer.cardiology')}</a></li>
                     </ul>
                 </div>
 
                 <div className="footer-section">
-                    <h4>Contact Info</h4>
+                    <h4>{t('footer.contact_info')}</h4>
                     <p>📞 +1 (212) 555-0123<br />📧 info@healusa.com</p>
-                    <p>🕐 Mon-Fri: 9AM-6PM<br />Sat: 10AM-4PM EST</p>
+                    <p>🕐 {t('footer.hours')}<br />{t('footer.hours_sat')}</p>
                     <Link to="/appointment" className="book-appointment-link" onClick={() => window.scrollTo(0, 0)}>{t('nav.contact')}</Link>
                 </div>
             </div>

@@ -60,6 +60,12 @@ const translations = {
         'about.reason4': 'Post-operative care and follow-up support',
         'about.journey_title': 'Your Journey to Healthcare in the USA',
         'about.journey_subtitle': 'A comprehensive step-by-step guide from initial consultation to post-treatment care',
+        'about.phase1_title': 'Phase 1: Before Coming to the USA',
+        'about.phase1_subtitle': 'Preparation and planning from China',
+        'about.phase2_title': 'Phase 2: Treatment in America',
+        'about.phase2_subtitle': 'Your care journey while in the United States',
+        'about.phase3_title': 'Phase 3: Returning Home',
+        'about.phase3_subtitle': 'Continued support after your treatment',
         'about.step1_title': 'Initial Consultation',
         'about.step1_point1': 'Medical records review',
         'about.step1_point2': 'Diagnosis confirmation',
@@ -338,6 +344,16 @@ const translations = {
 
         // Footer
         'footer.copyright': '© 2024 HealUSA. All rights reserved.',
+        'footer.tagline': 'Professional medical assistance for Chinese patients seeking healthcare in the USA',
+        'footer.quick_links': 'Quick Links',
+        'footer.services': 'Services',
+        'footer.dental': 'Dental',
+        'footer.vision': 'Vision Care',
+        'footer.orthopedic': 'Orthopedic',
+        'footer.cardiology': 'Cardiology',
+        'footer.contact_info': 'Contact Info',
+        'footer.hours': 'Mon-Fri: 9AM-6PM',
+        'footer.hours_sat': 'Sat: 10AM-4PM EST',
     },
     zh: {
         // 全局
@@ -392,6 +408,12 @@ const translations = {
         'about.reason4': '术后护理和跟进支持',
         'about.journey_title': '您的赴美就医之旅',
         'about.journey_subtitle': '从初步咨询到治疗后护理的全面分步指南',
+        'about.phase1_title': '第一阶段：赴美前准备',
+        'about.phase1_subtitle': '在中国的准备和规划',
+        'about.phase2_title': '第二阶段：在美治疗',
+        'about.phase2_subtitle': '您在美国期间的医疗服务',
+        'about.phase3_title': '第三阶段：回国后',
+        'about.phase3_subtitle': '治疗后的持续支持',
         'about.step1_title': '初步咨询',
         'about.step1_point1': '审查病历',
         'about.step1_point2': '确认诊断',
@@ -670,6 +692,16 @@ const translations = {
 
         // 页脚
         'footer.copyright': '© 2024 HealUSA. 版权所有。',
+        'footer.tagline': '专注华人患者，提供可信赖的赴美就医服务',
+        'footer.quick_links': '快速链接',
+        'footer.services': '服务项目',
+        'footer.dental': '牙科',
+        'footer.vision': '眼科',
+        'footer.orthopedic': '骨科',
+        'footer.cardiology': '心脏科',
+        'footer.contact_info': '联系方式',
+        'footer.hours': '周一至周五: 9AM-6PM',
+        'footer.hours_sat': '周六: 10AM-4PM 美东时间',
     }
 };
 
